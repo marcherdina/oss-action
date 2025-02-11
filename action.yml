@@ -59,17 +59,17 @@ inputs:
       This field applies only to package managers that support lock files, e.g. NPM.
     required: false
   db-url:
-    default: 'postgresql://postgres:kd3Lnglt2pwqKsn9@fiendishly-graceful-siskin.data-1.use1.tembo.io:5432/postgres'
+    default: 'postgres://avnadmin:AVNS_5OmJyeqijnVyfacbzcP@oss-ort-db-oss-ort-db.i.aivencloud.com:14997/defaultdb?sslmode=require'
     description: |
       URL of the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-username:
-    default: 'postgres'
+    default: 'avnadmin'
     description: |
       Username for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-password:
-    default: 'kd3Lnglt2pwqKsn9'
+    default: 'AVNS_5OmJyeqijnVyfacbzcP'
     description: |
       Password for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
