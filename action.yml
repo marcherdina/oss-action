@@ -156,7 +156,7 @@ inputs:
       Path to ORT 'home' or 'data' directory within the user home directory.
     required: false
   ort-config-repository:
-    default: 'https://github.com/oss-review-toolkit/ort-config.git'
+    default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG.git'
     description: |
       URL to ORT configuration repository to use.
     required: false
@@ -166,7 +166,7 @@ inputs:
       The Git revision or branch of the ORT configuration repository to use.
     required: false
   ort-yml-path:
-    default: ''
+    default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG/blob/main/.ort.yml'
     description: |
       Path to file containing the repository configuration.
       If set, the '.ort.yml' file from the repository is ignored.
