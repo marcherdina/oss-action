@@ -121,17 +121,17 @@ inputs:
       List of arguments to pass to ORT CLI, applies to all commands.
     required: false
   ort-cli-analyze-args:
-    default: ''
+    default: '-f JSON'
     description: |
       List of arguments to pass to ORT Analyzer CLI.
     required: false
   ort-cli-scan-args:
-    default: ''
+    default: '-f JSON --package-types=PACKAGE'
     description: |
       List of arguments to pass to ORT Scanner CLI.
     required: false
   ort-cli-evaluate-args:
-    default: ''
+    default: '-f JSON --package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --package-curations-dir=$ORT_CONFIG_DIR/curationsDir -r $ORT_CONFIG_DIR/elval.rule.kts'
     description: |
       List of arguments to pass to ORT Evaluator CLI.
     required: false
@@ -141,7 +141,7 @@ inputs:
       List of arguments to pass to ORT Advisor CLI.
     required: false
   ort-cli-report-args:
-    default: '-O CycloneDX=output.file.formats=json,xml -O SpdxDocument=output.file.formats=json,yaml'
+    default: '-f WebApp --copyright-garbage-file=$ORT_CONFIG_DIR/copyright-garbage.yml --license-classifications-file=$ORT_CONFIG_DIR/base-license-classifications.yml --package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --custom-license-texts-dir=$ORT_CONFIG_DIR/customLicenseTexts'
     description: |
       List of arguments to pass to ORT Reporter CLI.
     required: false
