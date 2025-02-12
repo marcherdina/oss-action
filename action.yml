@@ -159,12 +159,12 @@ inputs:
     default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG.git'
     description: |
       URL to ORT configuration repository to use.
-    required: false
+    required: true
   ort-config-revision:
-    default: 'main'
+    default: '335fcd20c861f3e6f6173e9952683d117ad57421'
     description: |
       The Git revision or branch of the ORT configuration repository to use.
-    required: false
+    required: true
   ort-yml-path:
     default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG/blob/main/.ort.yml'
     description: |
@@ -181,7 +181,7 @@ inputs:
     default: 'A0SD2.1,WebApp'
     description: |
       Comma-separated list of ORT reporters to run.
-    required: false
+    required: true
   run:
     default: >
       cache-dependencies,
