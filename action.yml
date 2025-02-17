@@ -59,17 +59,17 @@ inputs:
       This field applies only to package managers that support lock files, e.g. NPM.
     required: false
   db-url:
-    default: $DB_URL
+    default: ''
     description: |
       URL of the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-username:
-    default: $DB_NAME
+    default: ''
     description: |
       Username for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-password:
-    default: $DB_PW
+    default: ''
     description: |
       Password for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
@@ -121,17 +121,17 @@ inputs:
       List of arguments to pass to ORT CLI, applies to all commands.
     required: false
   ort-cli-analyze-args:
-    default: '-f JSON'
+    default: ''
     description: |
       List of arguments to pass to ORT Analyzer CLI.
     required: false
   ort-cli-scan-args:
-    default: '-f JSON --package-types=PACKAGE'
+    default: ''
     description: |
       List of arguments to pass to ORT Scanner CLI.
     required: false
   ort-cli-evaluate-args:
-    default: '-f JSON --package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --package-curations-dir=$ORT_CONFIG_DIR/curationsDir -r $ORT_CONFIG_DIR/elval.rule.kts'
+    default: ''
     description: |
       List of arguments to pass to ORT Evaluator CLI.
     required: false
@@ -141,7 +141,7 @@ inputs:
       List of arguments to pass to ORT Advisor CLI.
     required: false
   ort-cli-report-args:
-    default: '-f WebApp --copyright-garbage-file=$ORT_CONFIG_DIR/copyright-garbage.yml --license-classifications-file=$ORT_CONFIG_DIR/base-license-classifications.yml --package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --custom-license-texts-dir=$ORT_CONFIG_DIR/customLicenseTexts'
+    default: '-O CycloneDX=output.file.formats=json,xml -O SpdxDocument=output.file.formats=json,yaml'
     description: |
       List of arguments to pass to ORT Reporter CLI.
     required: false
@@ -156,17 +156,17 @@ inputs:
       Path to ORT 'home' or 'data' directory within the user home directory.
     required: false
   ort-config-repository:
-    default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG.git'
+    default: 'https://github.com/marcherdina/ORT-GITHUB-ORG.git'
     description: |
       URL to ORT configuration repository to use.
-    required: true
+    required: false
   ort-config-revision:
-    default: '335fcd20c861f3e6f6173e9952683d117ad57421'
+    default: 'main'
     description: |
       The Git revision or branch of the ORT configuration repository to use.
-    required: true
+    required: false
   ort-yml-path:
-    default: 'https://github.com/MarcHerdina/ORT-GITHUB-ORG/blob/main/.ort.yml'
+    default: ''
     description: |
       Path to file containing the repository configuration.
       If set, the '.ort.yml' file from the repository is ignored.
@@ -178,10 +178,10 @@ inputs:
       If empty, $GITHUB_WORKSPACE directory is scanned.
     required: false
   report-formats:
-    default: 'A0SD2.1,WebApp'
+    default: 'CycloneDx,SpdxDocument,WebApp'
     description: |
       Comma-separated list of ORT reporters to run.
-    required: true
+    required: false
   run:
     default: >
       cache-dependencies,
