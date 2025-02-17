@@ -151,7 +151,7 @@ inputs:
       Path to ORT configuration directory within the user home directory.
     required: false
   ort-home-path:
-    default: ''
+    default: '.ort'
     description: |
       Path to ORT 'home' or 'data' directory within the user home directory.
     required: false
