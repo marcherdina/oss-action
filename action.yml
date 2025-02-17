@@ -131,7 +131,7 @@ inputs:
       List of arguments to pass to ORT Scanner CLI.
     required: false
   ort-cli-evaluate-args:
-    default: '--package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --package-curations-dir=$ORT_CONFIG_DIR/curationsDir -r $ORT_CONFIG_DIR/elval.rule.kts'
+    default: '-f JSON --package-configurations-dir=$ORT_CONFIG_DIR/package-configurations --package-curations-dir=$ORT_CONFIG_DIR/curationsDir -r $ORT_CONFIG_DIR/elval.rule.kts'
     description: |
       List of arguments to pass to ORT Evaluator CLI.
     required: false
@@ -187,7 +187,6 @@ inputs:
       cache-dependencies,
       labels,
       analyzer,
-      evaluator,
       advisor,
       reporter,
       upload-results
