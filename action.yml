@@ -543,6 +543,9 @@ runs:
       if: contains(inputs.run, 'evaluator')
       run: |
         echo -e "\e[1;33m Running ORT Evaluator... "
+        ls
+        cd $ORT_CONFIG_PATH
+        ls
         docker run \
         --mount type=bind,source=$HOME,target=/home/ort \
         -e JDK_JAVA_OPTIONS="-Xmx5120m" \
@@ -556,7 +559,7 @@ runs:
         -i ${ORT_RESULTS_CURRENT_PATH/$USER/ort} \
         -o ${ORT_RESULTS_PATH/$USER/ort} \
         -f JSON \
-        -r ./evaluator.rules.kts \
+        -r $ORT_CONFIG_PATH/evaluator.rules.kts \
         ${ORT_CLI_EVALUATE_ARGS} || ORT_CLI_EVALUATE_EXIT_CODE=$? \
         && ORT_CLI_EVALUATE_EXIT_CODE="${ORT_CLI_EVALUATE_EXIT_CODE:-0}" \
         && echo "exit-code=${ORT_CLI_EVALUATE_EXIT_CODE}" >> "$GITHUB_OUTPUT"
