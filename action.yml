@@ -556,7 +556,7 @@ runs:
         -i ${ORT_RESULTS_CURRENT_PATH/$USER/ort} \
         -o ${ORT_RESULTS_PATH/$USER/ort} \
         -f JSON \
-        -r ${ort-config-repository}/blob/main/evaluator.rules.kts \
+        -r ./evaluator.rules.kts \
         ${ORT_CLI_EVALUATE_ARGS} || ORT_CLI_EVALUATE_EXIT_CODE=$? \
         && ORT_CLI_EVALUATE_EXIT_CODE="${ORT_CLI_EVALUATE_EXIT_CODE:-0}" \
         && echo "exit-code=${ORT_CLI_EVALUATE_EXIT_CODE}" >> "$GITHUB_OUTPUT"
