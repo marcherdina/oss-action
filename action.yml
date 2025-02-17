@@ -59,17 +59,17 @@ inputs:
       This field applies only to package managers that support lock files, e.g. NPM.
     required: false
   db-url:
-    default: ${{ secrets.DB_URL }}
+    default: $DB_URL
     description: |
       URL of the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-username:
-    default: ${{ secrets.DB_NAME }}
+    default: $DB_NAME
     description: |
       Username for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
   db-password:
-    default: ${{ secrets.DB_PW }}
+    default: $DB_PW
     description: |
       Password for the PostgreSQL database used for caching scan-results and storing file archives.
     required: false
