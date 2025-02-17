@@ -187,6 +187,7 @@ inputs:
       cache-dependencies,
       labels,
       analyzer,
+      evaluator,
       advisor,
       reporter,
       upload-results
