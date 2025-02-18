@@ -178,7 +178,7 @@ inputs:
       If empty, $GITHUB_WORKSPACE directory is scanned.
     required: false
   report-formats:
-    default: 'CycloneDx,SpdxDocument,WebApp'
+    default: 'AOSD2.1,SpdxDocument,WebApp'
     description: |
       Comma-separated list of ORT reporters to run.
     required: false
